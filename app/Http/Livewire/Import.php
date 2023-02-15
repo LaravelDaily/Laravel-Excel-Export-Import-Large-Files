@@ -45,7 +45,7 @@ class Import extends Component
 
     public function updateImportProgress()
     {
-        $this->importFinished = $this->importBatch->finished();
+        $this->importFinished = $this->getImportBatchProperty()->finished();
 
         if ($this->importFinished) {
             Storage::delete($this->importFilePath);
